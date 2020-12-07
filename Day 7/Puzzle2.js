@@ -53,29 +53,10 @@ function getBagCountContained(bagColor, combos){
     return count;    
 }
 
-function getBagsContainingColor(color, combos, colorCombos){
-    // Get all bags with contents that include the color.
-    for (let i=0; i<combos.length; i++){
-        for (let j=0; j<combos[i].contains.length;j++){
-            if (combos[i].contains[j].color == color) {
-                if (!colorCombos.includes(combos[i].color)){
-                    colorCombos.push(combos[i].color);
-                    colorCombos = getBagsContainingColor(
-                        combos[i].color, combos, colorCombos);
-                }
-            }
-        }
-    }
-    return colorCombos;
-}
-
 function init(){
     let dataRaw = loadData("./data.dat");
     let combos = getCombinations(dataRaw);
-    let colorCombos = [];
-    getBagsContainingColor("shiny gold", combos, colorCombos);
-    console.log(`Number of combinations = ${colorCombos.length}`);
-    console.log(`You'll have to take ${getTotalBagCount("shiny gold", combos)} bags.`);
+    console.log(`Got a shiny gold bag? \nYou'll have to take ${getTotalBagCount("shiny gold", combos)} bags.`);
 }
 
 init();
