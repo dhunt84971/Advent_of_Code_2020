@@ -1,6 +1,5 @@
 "use strict";
 
-const { exec } = require("child_process");
 const fs = require("fs");
 
 function loadData(filename){
