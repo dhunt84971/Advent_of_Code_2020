@@ -82,9 +82,13 @@ function isValid(passport){
     // hcl validation
     if (!passport.hcl) valid = false;
     let hclTest = /^#([0-9]|[a-f]){6}$/;
+    let validHcl = RegExp(/#[[0-9a-f]{6}/);
+    if (!validHcl){
+        console.log(`His test = ${passport.hcl}`);
+    }
     if (!hclTest.test(passport.hcl)){
         valid = false;
-        //console.log(passport.hcl);
+        console.log(`My test = ${passport.hcl}`);
     }
 
     // ecl validation
@@ -100,7 +104,7 @@ function isValid(passport){
     let pidTest = /^\d{9}$/;
     if (!pidTest.test(passport.pid)){
         valid = false;
-        console.log(passport.pid);
+        //console.log(passport.pid);
     }
 
     return valid;
