@@ -45,7 +45,7 @@ function calcPaths(counts){
         if (count == 1) countCalc.push(1); // Only 1 consecutive digit.  
         if (count == 2) countCalc.push(2); 
         if (count == 3) countCalc.push(4);
-        if (count >= 4) countCalc.push(2**(count-1)-1);
+        if (count >= 4) countCalc.push(2**(count-1)-1); // This calculation is supposed to take the binary paths and remove the ones that don't work.
     }
     return countCalc;
 }
