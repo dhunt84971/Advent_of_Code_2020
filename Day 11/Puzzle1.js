@@ -38,7 +38,6 @@ function getAdjacentNumOccupied(i,j,data){
 }
 
 function applyRules(data){
-
     // If a seat is empty (L) and there are no occupied seats adjacent to it, 
     //      the seat becomes occupied.
     // If a seat is occupied (#) and four or more seats adjacent to it are also occupied, 
